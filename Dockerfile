@@ -16,5 +16,4 @@ COPY . /gopath/src/github.com/criticalmaps/criticalmaps-janitor
 
 RUN ls /gopath/src/github.com/criticalmaps/criticalmaps-janitor
 
-CMD ["/gopath/bin/revel", "run", "github.com/criticalmaps/criticalmaps-janitor"]
-#CMD ["/gopath/bin/revel", "run", "github.com/criticalmaps/criticalmaps-janitor", "prod", "-v"]
+CMD ["/gopath/bin/revel", "run", "github.com/criticalmaps/criticalmaps-janitor", "prod"]
