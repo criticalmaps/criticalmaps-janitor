@@ -8,6 +8,9 @@ module:testrunner
 
 
 GET     /                                       App.Index
+GET     /thumbnail/:id                          App.Thumbnail
+GET     /image/:id                              App.Image
+GET     /image/delete/:id                       App.Delete
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

@@ -1,6 +1,8 @@
 package app
 
 import (
+	"github.com/criticalmaps/criticalmaps-janitor/app/controllers"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/revel/revel"
 )
 
@@ -34,7 +36,7 @@ func init() {
 	// revel.DevMode and revel.RunMode only work inside of OnAppStart. See Example Startup Script
 	// ( order dependent )
 	// revel.OnAppStart(ExampleStartupScript)
-	// revel.OnAppStart(InitDB)
+	revel.OnAppStart(controllers.InitDB)
 	// revel.OnAppStart(FillCache)
 }
 
@@ -50,10 +52,3 @@ var HeaderFilter = func(c *revel.Controller, fc []revel.Filter) {
 	fc[0](c, fc[1:]) // Execute the next filter stage.
 }
 
-//func ExampleStartupScript() {
-//	// revel.DevMod and revel.RunMode work here
-//	// Use this script to check for dev mode and set dev/prod startup scripts here!
-//	if revel.DevMode == true {
-//		// Dev mode
-//	}
-//}
